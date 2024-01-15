@@ -1,0 +1,111 @@
+* {
+  outline: none;
+  text-decoration: none;
+  border: none;
+}
+.container {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.layout-main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 24px;
+  .numbers {
+    font-family: "Arial", sans-serif;
+    font-size: 450px;
+    line-height: 1em;
+    text-align: center;
+    margin: 40px auto;
+    overflow: hidden;
+    .numbers__window {
+      display: inline-block;
+      overflow: hidden;
+      width: 0.6em;
+      height: 1em;
+      .numbers__window__digit {
+        font: inherit;
+        word-break: break-all;
+        display: block;
+        width: 0;
+        padding: 0 0.52em 0 0;
+        margin: 0 auto;
+        overflow: inherit;
+        background-image: linear-gradient(to bottom right, #ff512f, #dd2476);
+        color: #ffd166;
+        box-shadow: 0px -25px 20px -20px rgba(0, 0, 0, 0.45),
+          25px 0 20px -20px rgba(0, 0, 0, 0.45);
+        border-radius: 30px;
+        &::before {
+          content: attr(data-fake);
+          display: inline-block;
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
+}
+.animation-number {
+  animation: counting 0.4s steps(100) forwards 100;
+}
+$color_1: #fff;
+$color_2: #e74c3c;
+$font-family_1: FontAwesome;
+$background-color_1: #c0392b;
+
+.btn {
+  padding: 15px;
+  font-weight: 700;
+  font-size: 2rem;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+.btn--doar {
+  color: $color_1;
+  padding-right: 0;
+  background-color: $background-color_1;
+  -webkit-clip-path: polygon(0% 0%, 100% 0, 100% 70%, 90% 100%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 75% 100%, 0 100%);
+  &:hover {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 100%, 0 100%);
+  }
+  &:after {
+    content: "\f004";
+    color: $color_2;
+    font-family: $font-family_1;
+    display: inline-block;
+    position: relative;
+    right: -55px;
+    transition: all 0.2s ease;
+  }
+}
+
+.numbers__window__digit--1 {
+  animation-iteration-count: 15;
+}
+.numbers__window__digit--2 {
+  animation-iteration-count: 40;
+}
+.numbers__window__digit--3 {
+  animation-iteration-count: 105;
+}
+.numbers__window__digit--4 {
+  animation-iteration-count: 12;
+}
+.numbers__window__digit--5 {
+  animation-iteration-count: 15;
+}
+
+@keyframes counting {
+  100% {
+    transform: translate3d(0, -10em, 0);
+  }
+}

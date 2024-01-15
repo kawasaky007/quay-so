@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="layout-main">
+    <div class="numbers">
+      <span class="numbers__window">
+        <span
+          class="numbers__window__digit numbers__window__digit--1"
+          data-fake="8642519073"
+        >
+          {{ arrayNumber[0] || "?" }}
+        </span>
+      </span>
+      <span class="numbers__window">
+        <span
+          class="numbers__window__digit numbers__window__digit--2"
+          data-fake="5207186394"
+        >
+          {{ arrayNumber[1] || "?" }}
+        </span>
+      </span>
+      <span class="numbers__window">
+        <span
+          class="numbers__window__digit numbers__window__digit--3"
+          data-fake="8395216407"
+        >
+          {{ arrayNumber[2] || "?" }}
+        </span>
+      </span>
+    </div>
+
+    <button (click)="play()" class="btn-play btn btn--doar">Quay</button>
+  </div>
+</div>
